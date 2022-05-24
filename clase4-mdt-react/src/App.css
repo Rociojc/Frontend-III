@@ -1,0 +1,49 @@
+.header_ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+  
+}
+
+.header_li {
+  
+  background-color: blueviolet;
+  width: 200px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding: 50px;
+  gap: 30px;
+}
+
+.imagen {
+  width: 130px;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.section_info {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.h2_info,
+.li_info {
+  width: 180px;
+}
+
+.section_bio {
+  text-align: center;
+  width: 400px;
+  margin: 0 auto;
+}
