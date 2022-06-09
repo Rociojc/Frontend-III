@@ -1,4 +1,5 @@
 import Bio from "./Bio";
+
 const SectionInfo = (props) => {
   if (props.bio) {
     return (

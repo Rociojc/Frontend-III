@@ -2,7 +2,8 @@ import Header from './Header';
 import PersonalInformation from './PersonalInformation';
 import SectionInfo from './SectionInfo';
 import './App.css';
-import { Info } from "./Data.js"
+import { Info } from "./Data.js";
+
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       <SectionInfo experience={Info.experience}/>
       <SectionInfo education={Info.education}/>
       <SectionInfo bio={Info.bio}/>
+
+
+      <h1>Ejemplo 1</h1>
     </div>
   );
 }
