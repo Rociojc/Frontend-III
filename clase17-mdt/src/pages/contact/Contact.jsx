@@ -1,5 +1,4 @@
 import React from "react";
-import GoTo from "../../components/GoTo";
 
 const Contact = () => {
     return (

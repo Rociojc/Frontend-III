@@ -1,6 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Boton, Formulario, GlobalStyle, Input, Titulo } from '../../style/LoginStyle';
+import GoTo from '../../components/GoTo';
+import { Boton, Formulario, Input, Seccion, Text2, Titulo } from '../../style/LoginStyle';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
 
 function SignIn({ setIsLogged }) {
     const navigate = useNavigate();
@@ -11,12 +14,20 @@ function SignIn({ setIsLogged }) {
   }
   return (
     <>
-    <GlobalStyle/>
     <Formulario onSubmit={handlerSubmit}>
       <Titulo>Sign In</Titulo>
-      <Input placeholder='E-mail' />
-      <Input placeholder='Password' />
+      <Seccion>
+        <EmailIcon/>
+        <Input placeholder='E-mail' />
+      </Seccion>
+      <Seccion>
+        <LockIcon/>
+        <Input placeholder='Password' />
+      </Seccion>
       <Boton>Log In</Boton>
+      <Text2>Not a member?
+        <GoTo argumentOne={" Create Account"} argumentTwo={"/login/sign_up"}/>
+      </Text2>
     </Formulario>
     </>
   )

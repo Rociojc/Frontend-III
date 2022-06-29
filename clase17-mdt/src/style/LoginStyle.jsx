@@ -10,11 +10,15 @@ export const GlobalStyle = createGlobalStyle `
     }
 `
 
+export const Contenedor = styled.div `
+    width: 430px;
+    padding-top: 30px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    text-align: center;
+`
+
 export const Formulario = styled.form `
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // gap: 20px;
     width: 430px;
     padding: 30px 50px;
     background-color: #FFFFFF;
@@ -26,13 +30,24 @@ export const Titulo = styled.h1 `
     margin-bottom: 30px;
 `
 
-export const Input = styled.input `
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    width: 100%;
-    margin-bottom: 20px;
+export const Seccion = styled.section `
+    display: flex;
+    align-items: center;
     box-shadow: 0px 2px 29px -7px rgba(102, 127, 234, 0.75);
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    
+`
+
+export const Input = styled.input `
+    border: none;
+    padding: 5px;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
 `
 
 export const Boton = styled.button `
@@ -45,6 +60,7 @@ export const Boton = styled.button `
     background-image: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     font-size: 12px;
     color: #ffffff;
+    cursor: pointer;
 `
 
 export const Check = styled.input `

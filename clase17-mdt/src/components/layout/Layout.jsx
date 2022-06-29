@@ -4,7 +4,7 @@ import Navigation from '../Navigation';
 
 function Layout({ children }) {
     const location = useLocation();
-    let doesContainer = location.pathname.includes("login") || location.pathname.includes("sign_in")
+    let doesContainer = location.pathname.includes("/login")
   return (
     <>
         { doesContainer ? null : <Navigation/>}

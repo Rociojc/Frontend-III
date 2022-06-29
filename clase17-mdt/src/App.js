@@ -6,7 +6,8 @@ import About from "./pages/about/About";
 import Home from "./pages/home/Home";
 import ProtectedRoutes from "./components/protectedRoutes/ProtectedRoutes";
 import Login from "./pages/login/Login";
-import SignIn from "./pages/login/SignIn";
+import SignUp from "./pages/login/SignUp";
+import SignIn from "./pages/login/SignIn"
 import Layout from "./components/layout/Layout";
 
 function App() {
@@ -15,8 +16,10 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/login" element={<Login setIsLogged={setIsLogged}/>}/>
-          <Route path="/sign_in" element={<SignIn setIsLogged={setIsLogged}/>}/>
+          <Route path="/login" element={<Login/>}>
+            <Route path="/login/sign_in" element={<SignIn setIsLogged={setIsLogged}/>}/>
+            <Route path="/login/sign_up" element={<SignUp setIsLogged={setIsLogged}/>}/>
+          </Route>
           <Route element={<ProtectedRoutes isLogged={isLogged} />}>
             <Route path="/home" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
