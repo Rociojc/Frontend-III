@@ -37,7 +37,6 @@ export const Seccion = styled.section `
     border-radius: 20px;
     padding: 5px 15px;
     margin-bottom: 20px;
-    
 `
 
 export const Input = styled.input `
@@ -72,4 +71,9 @@ export const Text1 = styled.span `
 `
 export const Text2 = styled.p `
     font-size: 13px;
+`
+
+export const Mensaje = styled.span `
+    color: red;
+    font-size: 12px;
 `

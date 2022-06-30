@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import GoTo from '../../components/GoTo';
-import { Boton, Formulario, Input, Seccion, Text2, Titulo } from '../../style/LoginStyle';
+import { Boton, Formulario, Input, Mensaje, Seccion, Text2, Titulo } from '../../style/LoginStyle';
 import EmailIcon from '@mui/icons-material/Email';
 import LockIcon from '@mui/icons-material/Lock';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useFormik } from 'formik';
+import * as Yup from "yup";
 
 function SignIn({ setIsLogged }) {
   const [showPassword, setShowPassword] = useState(false)
@@ -18,6 +19,18 @@ function SignIn({ setIsLogged }) {
       email: "",
       password: ""
     },
+    validationSchema: Yup.object({
+      email: Yup.string().email("Ingresa un e-mail valido").required("Campo Requerido"),
+      password: Yup.string()
+      .min(6, "La contraseña debe tener al menos 6 caracteres")
+      .required("Campo Requerido")
+      .matches(
+        /^(?=.?[A-Z])(?=.?[a-z])(?=.*?[0-9]).{6,}$/,
+        "La contraseña debe tener al menos una mayúscula, una minúscula, un número y un carácter especial"
+      )
+    }),
+    validateOnChange: false,
+    validateOnBlur: false,
     onSubmit: (values) => {
       setIsLogged(true);
       navigate("/home");
@@ -28,6 +41,7 @@ function SignIn({ setIsLogged }) {
     <>
     <Formulario onSubmit={formik.handleSubmit}>
       <Titulo>Sign In</Titulo>
+      {formik.errors.email && <Mensaje>{formik.errors.email}</Mensaje>}
       <Seccion>
         <EmailIcon/>
         <Input
@@ -38,6 +52,7 @@ function SignIn({ setIsLogged }) {
           onChange={formik.handleChange}
         />
       </Seccion>
+      {formik.errors.password && <Mensaje>{formik.errors.password}</Mensaje>}
       <Seccion>
         <LockIcon/>
         <Input
